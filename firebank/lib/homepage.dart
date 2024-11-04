@@ -43,10 +43,23 @@ class _HomePageState extends State<HomePage> {
                         )
                       ],
                     ),
-                    Icon(
-                      Icons.notification_add,
-                      color: Colors.grey,
-                    )
+                    Container(
+                        height: 25,
+                        width: 25,
+                        child: Stack(
+                          children: [
+                            Positioned(left: 16,
+                                child: Container(
+                              height: 6.5,
+                              width: 6.5,
+                              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(100)),
+                            )),
+                            Icon(
+                              Icons.notifications,
+                              color: Colors.grey,
+                            ),
+                          ],
+                        ))
                   ],
                 ),
                 // ==================================SECTION 2
@@ -433,6 +446,61 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Container(
+                    height: 105,
+                    width: double.infinity,
+                    margin: EdgeInsets.only(left: 15, right: 15),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(25)),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 90,
+                          width: 90,
+                          padding: EdgeInsets.all(22),
+                          child: Image.asset(
+                            "./images/ic.png",
+                            fit: BoxFit.scaleDown,
+                          ),
+                        ),
+                        Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SizedBox(
+                                height: .5,
+                              ),
+                              Text(
+                                "INVITE A FRIEND",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1,
+                                    wordSpacing: 1),
+                              ),
+                              SizedBox(
+                                height: 1,
+                              ),
+                              Container(
+                                  height: 50,
+                                  width: 250,
+                                  child: Text(
+                                    "INVITE YOUR FRIENDS OR FAMILY MEMBERS TO DONATE A BLOOD",
+                                    style: TextStyle(
+                                        color: Colors.grey[800],
+                                        letterSpacing: 1,
+                                        wordSpacing: 1,
+                                        fontSize: 13),
+                                  ))
+                            ],
+                          ),
+                        )
                       ],
                     ),
                   )

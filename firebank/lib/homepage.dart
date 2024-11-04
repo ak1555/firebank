@@ -133,14 +133,147 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        width: 9,
+                      ),
+                      Container(
+                        height: 150,
+                        width: 320,
+                        child: Card(
+                          child: Column(children: [
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "YOUR DONATED BLOOD CAN SAVE A LIFE",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              padding: EdgeInsets.only(left: 10, right: 10),
+                              child: Text(
+                                  "AND THET LIFE CAN SAVE ANOTHER,BE A PART OF THE CHAIN",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.red,
+                                      fontSize: 20,
+                                      letterSpacing: 1,
+                                      wordSpacing: 1)),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 55,
+                                  child: Image.asset("./images/bb.jpeg"),
+                                ),
+                                Text(
+                                  "Dr: A P J ABDHUL KALAM",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey),
+                                ),
+                                SizedBox(
+                                  width: 2,
+                                )
+                              ],
+                            )
+                          ]),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 9,
+                      ),
+                      Container(
+                        height: 150,
+                        width: 320,
+                        child: Card(
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: 3,
+                              ),
+                              Container(
+                                width: 110,
+                                height: double.infinity,
+                                child: Image.asset("./images/do.jpeg"),
+                              ),
+                              Container(
+                                height: 160,
+                                width: 199,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 100,
+                                      width: double.infinity,
+                                      alignment: Alignment.topCenter,
+                                      child: Text(
+                                        "DONATE     BLOOD,        SAVE A LIFE",
+                                        style: TextStyle(
+                                            letterSpacing: 1.5,
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 8.5,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Container(
+                                          height: 27,
+                                          width: 85,
+                                          alignment: Alignment.center,
+                                          decoration: BoxDecoration(
+                                              color: Colors.black,
+                                              borderRadius:
+                                                  BorderRadius.circular(7)),
+                                          child: Text(
+                                            "31 JULY",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 2.5,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          "10:00 AM ONWARDS",
+                                          style: TextStyle(
+                                              letterSpacing: 2,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 )
               ],
             ),
           ),
+          // ====================================================================
           Container(
-            height: 550,
+            height: 558,
             width: double.infinity,
             child: Card(
               child: Column(
@@ -150,12 +283,156 @@ class _HomePageState extends State<HomePage> {
                     height: 100,
                     width: double.infinity,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Container(
-                          height: 100,
-                          width: 100,
-                          color: Colors.white,
+                          height: 95,
+                          width: 95,
+                          padding: EdgeInsets.only(top: 1, bottom: 2),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(27)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(
+                                Icons.campaign,
+                                color: Colors.red,
+                                size: 44,
+                              ),
+                              Text(
+                                "CAMPAINS",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 95,
+                          width: 95,
+                          padding: EdgeInsets.only(top: 1, bottom: 2),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(27)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(
+                                Icons.bloodtype,
+                                color: Colors.red,
+                                size: 44,
+                              ),
+                              Text(
+                                "DONATE",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 95,
+                          width: 95,
+                          padding: EdgeInsets.only(top: 1, bottom: 2),
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(27)),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(
+                                Icons.switch_account_outlined,
+                                color: Colors.red,
+                                size: 44,
+                              ),
+                              Text(
+                                "FIND DONOR",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1),
+                              )
+                            ],
+                          ),
                         )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 230,
+                    width: double.infinity,
+                    margin: EdgeInsets.only(left: 15, right: 15),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: Colors.white),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          height: 50,
+                          width: double.infinity,
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "HOSPITALITY ENQUIRY",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: Colors.purple[900],
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 50,
+                          width: double.infinity,
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "DOCTORS  CONSELTENCY",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: Colors.purple[900],
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 50,
+                          width: double.infinity,
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "CHECKUP  STATUS",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 1),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                color: Colors.purple[900],
+                              )
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   )
@@ -165,6 +442,22 @@ class _HomePageState extends State<HomePage> {
           )
         ]),
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          children: [
+            IconButton(icon: Icon(Icons.menu), onPressed: () {}),
+            Spacer(),
+            IconButton(icon: Icon(Icons.search), onPressed: () {}),
+            IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+          ],
+        ),
+      ),
+      floatingActionButton:
+          FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
+
+
+// https://m2.material.io/components/app-bars-bottom/flutter#bottom-app-bar-example

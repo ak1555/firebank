@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -178,7 +178,46 @@ class _LoginState extends State<Login> {
                     )),
               ),
             ),
-            Text("signup with")
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              height: 15,
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    // height: 5,
+                    width: 150,
+                    child: Divider(),
+                  ),
+                  Text(
+                    "  OR  ",
+                    style: TextStyle(fontWeight: FontWeight.w500),
+                  ),
+                  Container(
+                    // height: 5,
+                    width: 150,
+                    child: Divider(),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 25,
+                  width: 25,
+                  child: Image.asset("./images/g.jpg"),
+                ),
+                Text("signup with google"),
+              ],
+            )
           ],
         ),
       ),

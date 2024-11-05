@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -8,6 +9,12 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  TextEditingController _email=TextEditingController();
+  TextEditingController _password=TextEditingController();
+
+  Future loginfun()async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email.text, password: _password.text);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,6 +86,7 @@ class _LoginState extends State<Login> {
                     child: Expanded(
                         child: Expanded(
                             child: TextField(
+                              controller: _email,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                           prefixIcon: Icon(
@@ -111,6 +119,7 @@ class _LoginState extends State<Login> {
                     child: Expanded(
                         child: Expanded(
                             child: TextField(
+                              controller: _password,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                           prefixIcon: Icon(
@@ -132,7 +141,9 @@ class _LoginState extends State<Login> {
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.red.shade500),
-                          onPressed: () {},
+                          onPressed: () {
+                            loginfun();
+                          },
                           child: Text(
                             "LOGIN",
                             style: TextStyle(
@@ -157,7 +168,9 @@ class _LoginState extends State<Login> {
 
                               // backgroundColor: Colors.red.shade500
                               ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, "/signup");
+                          },
                           child: Text(
                             "SIGNUP",
                             style: TextStyle(

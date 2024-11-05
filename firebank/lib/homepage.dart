@@ -322,52 +322,62 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-                        Container(
-                          height: 95,
-                          width: 95,
-                          padding: EdgeInsets.only(top: 1, bottom: 2),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(27)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.bloodtype,
-                                color: Colors.red,
-                                size: 44,
-                              ),
-                              Text(
-                                "DONATE",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1),
-                              )
-                            ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/adddonor");
+                          },
+                          child: Container(
+                            height: 95,
+                            width: 95,
+                            padding: EdgeInsets.only(top: 1, bottom: 2),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(27)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.bloodtype,
+                                  color: Colors.red,
+                                  size: 44,
+                                ),
+                                Text(
+                                  "DONATE",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 1),
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                        Container(
-                          height: 95,
-                          width: 95,
-                          padding: EdgeInsets.only(top: 1, bottom: 2),
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(27)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(
-                                Icons.switch_account_outlined,
-                                color: Colors.red,
-                                size: 44,
-                              ),
-                              Text(
-                                "FIND DONOR",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1),
-                              )
-                            ],
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, "/details");
+                          },
+                          child: Container(
+                            height: 95,
+                            width: 95,
+                            padding: EdgeInsets.only(top: 1, bottom: 2),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(27)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(
+                                  Icons.switch_account_outlined,
+                                  color: Colors.red,
+                                  size: 44,
+                                ),
+                                Text(
+                                  "FIND DONOR",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      letterSpacing: 0),
+                                )
+                              ],
+                            ),
                           ),
                         )
                       ],

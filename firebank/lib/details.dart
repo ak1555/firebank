@@ -12,9 +12,17 @@ class _DetailsState extends State<Details> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.red.shade600,
         title: Container(
-          child: Text("data"),
+          child: Center(
+              child: Text(
+            "BLOOD BANK",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1,
+                fontSize: 25,
+                color: Colors.white),
+          )),
         ),
       ),
       body: Container(
@@ -30,10 +38,10 @@ class _DetailsState extends State<Details> {
                   itemCount: 1,
                   itemBuilder: (context, index) {
                     return Container(
-                      height: 285,
+                      height: 265,
                       width: double.infinity,
                       margin: EdgeInsets.only(
-                          left: 10, right: 10, top: 10, bottom: 10),
+                          left: 10, right: 10, top: 15, bottom: 10),
                       padding: EdgeInsets.only(left: 15, right: 15, top: 10),
                       decoration: BoxDecoration(
                           color: Colors.white30,
@@ -42,7 +50,7 @@ class _DetailsState extends State<Details> {
                       child: Column(
                         children: [
                           Container(
-                            height: 210,
+                            height: 185,
                             width: double.infinity,
                             child: Row(
                               children: [
@@ -57,39 +65,43 @@ class _DetailsState extends State<Details> {
                                       Text(
                                         "Abin krishna",
                                         style: TextStyle(
+                                            height: .65,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 21.5,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 5,
+                                        height: 15,
                                       ),
                                       Text("Location"),
                                       Text(
                                         "Kochi, Kaloor",
                                         style: TextStyle(
+                                            height: .65,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 19.5,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 5,
+                                        height: 15,
                                       ),
                                       Text("Contact Number"),
                                       Text(
                                         "9947063352",
                                         style: TextStyle(
+                                            height: .65,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 19.5,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 5,
+                                        height: 15,
                                       ),
                                       Text("Blood Group"),
                                       Text(
                                         "O+",
                                         style: TextStyle(
+                                            height: .65,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 19.5,
                                             letterSpacing: 1),
@@ -99,7 +111,31 @@ class _DetailsState extends State<Details> {
                                 ),
                                 Container(
                                   width: 170,
-                                  color: Colors.blue,
+                                  // color: Colors.blue,
+                                  child: Column(
+                                    children: [
+                                      Text(
+                                        "AVAILABLE",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.red,
+                                            fontSize: 15,
+                                            letterSpacing: 1),
+                                      ),
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Container(
+                                        height: 100,
+                                        width: 100,
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(25),
+                                          child: Image.asset("./images/g.jpg"),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 )
                               ],
                             ),

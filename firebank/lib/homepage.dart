@@ -392,7 +392,7 @@ class _HomePageState extends State<HomePage> {
                     margin: EdgeInsets.only(left: 15, right: 15),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: Colors.white),
+                        color: Colors.white70),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -439,6 +439,7 @@ class _HomePageState extends State<HomePage> {
                         Container(
                           height: 50,
                           width: double.infinity,
+                          // color: Colors.white10,
                           padding: EdgeInsets.only(left: 10, right: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -523,16 +524,19 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomAppBar(
         child: Row(
           children: [
+            SizedBox(width: 8,),
             IconButton(icon: Icon(Icons.menu), onPressed: () {}),
             Spacer(),
             IconButton(icon: Icon(Icons.search), onPressed: () {}),
             IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
+            SizedBox(width: 8,),
           ],
         ),
       ),
       floatingActionButton:
           FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      
     );
   }
 }

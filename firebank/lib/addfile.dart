@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -11,20 +12,47 @@ class Addfile extends StatefulWidget {
 }
 
 class _AddfileState extends State<Addfile> {
+  TextEditingController c1 = TextEditingController();
+  TextEditingController c2 = TextEditingController();
+  TextEditingController c3 = TextEditingController();
+  TextEditingController c4 = TextEditingController();
+  TextEditingController c5 = TextEditingController();
+  TextEditingController c6 = TextEditingController();
+  TextEditingController c7 = TextEditingController();
+  TextEditingController c8 = TextEditingController();
   List<String> ls = ["o+", "o-", "a+", "a-"];
-  bool img=false;
-  var seletedgroup;
+  bool img = false;
+  String? seletedgroup;
   File? _image;
   bool chkbx = false;
-  ImagePicker _picker=ImagePicker();
-
-  void pickimage() async{
-    final _pickedfile= await _picker.pickImage(source: ImageSource.gallery);
+  ImagePicker _picker = ImagePicker();
+  Map mp = {};
+  void pickimage() async {
+    final _pickedfile = await _picker.pickImage(source: ImageSource.gallery);
     setState(() {
-      _image=File(_pickedfile!.path);
-      img=true;
+      _image = File(_pickedfile!.path);
+      img = true;
     });
   }
+
+  void savedata() async {
+    final bytes = await _image!.readAsBytes();
+    final base64img = base64Encode(bytes);
+    mp = {
+      "name": c1.text,
+      "email": c2.text,
+      "phone": c3.text,
+      "place": c4.text,
+      "group": seletedgroup.toString(),
+      "dob": c5.text,
+      "weight": c6.text,
+      "age": c7.text,
+      "location": c8.text,
+      "profile": base64img.toString()
+    };
+    print(mp.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +66,8 @@ class _AddfileState extends State<Addfile> {
                 height: 220,
                 // color: const Color.fromARGB(255, 172, 13, 13),
                 width: double.infinity,
-                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // =========================================stack start
                     Container(
@@ -63,9 +92,8 @@ class _AddfileState extends State<Addfile> {
                                     Icons.perm_identity_outlined,
                                     size: 125,
                                   )),
-                                            //         )
-                                            )
-                                            ),
+                          //         )
+                        )),
                     // =========================================stack end
                   ],
                 ),
@@ -99,7 +127,7 @@ class _AddfileState extends State<Addfile> {
                 child: Expanded(
                     child: Expanded(
                         child: TextField(
-                  // controller: c1,
+                  controller: c1,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                       hintText: "FullName",
@@ -136,7 +164,7 @@ class _AddfileState extends State<Addfile> {
                 child: Expanded(
                     child: Expanded(
                         child: TextField(
-                  // controller: c2,
+                  controller: c2,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       hintText: "Email",
@@ -173,7 +201,7 @@ class _AddfileState extends State<Addfile> {
                 child: Expanded(
                     child: Expanded(
                         child: TextField(
-                  // controller: c3,
+                  controller: c3,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
                       hintText: "ContactNumber",
@@ -210,7 +238,7 @@ class _AddfileState extends State<Addfile> {
                 child: Expanded(
                     child: Expanded(
                         child: TextField(
-                  // controller: c4,
+                  controller: c4,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       hintText: "Place,District",
@@ -307,7 +335,7 @@ class _AddfileState extends State<Addfile> {
                         child: Expanded(
                             child: Expanded(
                                 child: TextField(
-                          // controller: c5,
+                          controller: c5,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               hintText: "dd-mm-yy",
@@ -353,7 +381,7 @@ class _AddfileState extends State<Addfile> {
                         child: Expanded(
                             child: Expanded(
                                 child: TextField(
-                          // controller: c6,
+                          controller: c6,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               hintText: "Weight",
@@ -393,7 +421,7 @@ class _AddfileState extends State<Addfile> {
                         child: Expanded(
                             child: Expanded(
                                 child: TextField(
-                          // controller: c7,
+                          controller: c7,
                           keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                               hintText: "age",
@@ -435,7 +463,7 @@ class _AddfileState extends State<Addfile> {
                 child: Expanded(
                     child: Expanded(
                         child: TextField(
-                  // controller: c8,
+                  controller: c8,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                       hintText: "location",
@@ -483,84 +511,108 @@ class _AddfileState extends State<Addfile> {
                         overlayColor: Colors.blue,
                       ),
                       onPressed: () {
-                        //   int agee=int.parse(c7.text);
-                        //    int weii=int.parse(c6.text);
-                        //     if(chkbx==true){
-                        //     if(agee>=18){
-
-                        //       if(_image!=null){
-                        //         if(weii>=45){
-                        //           if(c1.text!=null&&c2.text!=null){
-                        //               savedata();
-                        //               Navigator.pop(context);
-                        //           }else{
-                        //             showDialog(context: context, builder: (context) {
-                        //         return AlertDialog(
-                        //           title: Text("OOPS!!!"),
-                        //           content: Text("All Input Fields Must Want to Fill...."),
-                        //           actions: [
-                        //             TextButton(onPressed: () {
-                        //               Navigator.pop(context);
-                        //             }, child: Text("OK"))
-                        //           ],
-                        //         );
-                        //       },);
-                        //           }
-                        //         }else{
-                        //            showDialog(context: context, builder: (context) {
-                        //         return AlertDialog(
-                        //           title: Text("OOPS!!!"),
-                        //           content: Text("Your Weight Is Too LESS...."),
-                        //           actions: [
-                        //             TextButton(onPressed: () {
-                        //               Navigator.pop(context);
-                        //             }, child: Text("OK"))
-                        //           ],
-                        //         );
-                        //       },);
-                        //         }
-                        //       }else{
-                        //         showDialog(context: context, builder: (context) {
-                        //         return AlertDialog(
-                        //           title: Text("SORRY!!!"),
-                        //           content: Text("Image Is Mandotory...."),
-                        //           actions: [
-                        //             TextButton(onPressed: () {
-                        //               Navigator.pop(context);
-                        //             }, child: Text("OK"))
-                        //           ],
-                        //         );
-                        //       },);
-                        //       }
-
-                        //     }else{
-                        //       showDialog(context: context, builder: (context) {
-                        //         return AlertDialog(
-                        //           title: Text("OOPS!!!"),
-                        //           content: Text("You Must Above 18.."),
-                        //           actions: [
-                        //             TextButton(onPressed: () {
-                        //               Navigator.pop(context);
-                        //             }, child: Text("OK"))
-                        //           ],
-                        //         );
-                        //       },);
-                        //     }}
-                        //     else{
-                        //        showDialog(context: context, builder: (context) {
-                        //         return AlertDialog(
-                        //           title: Text("OOPS!!!"),
-                        //           content: Text("You Must Agree the Terms & Conditions..."),
-                        //           actions: [
-                        //             TextButton(onPressed: () {
-                        //               Navigator.pop(context);
-                        //             }, child: Text("OK"))
-                        //           ],
-                        //         );
-                        //       },);
-                        //     }
-
-                        // // savedata();
+                        int agee = int.parse(c7.text);
+                        int weii = int.parse(c6.text);
+                        if (chkbx == true) {
+                          if (agee >= 18) {
+                            if (_image != null) {
+                              if (weii >= 45) {
+                                if (c1.text != null && c2.text != null) {
+                                  savedata();
+                                  Navigator.pop(context);
+                                } else {
+                                  showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return AlertDialog(
+                                        title: Text("OOPS!!!"),
+                                        content: Text(
+                                            "All Input Fields Must Want to Fill...."),
+                                        actions: [
+                                          TextButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              child: Text("OK"))
+                                        ],
+                                      );
+                                    },
+                                  );
+                                }
+                              } else {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      title: Text("OOPS!!!"),
+                                      content:
+                                          Text("Your Weight Is Too LESS...."),
+                                      actions: [
+                                        TextButton(
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Text("OK"))
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
+                            } else {
+                              showDialog(
+                                context: context,
+                                builder: (context) {
+                                  return AlertDialog(
+                                    title: Text("SORRY!!!"),
+                                    content: Text("Image Is Mandotory...."),
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text("OK"))
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return AlertDialog(
+                                  title: Text("OOPS!!!"),
+                                  content: Text("You Must Above 18.."),
+                                  actions: [
+                                    TextButton(
+                                        onPressed: () {
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("OK"))
+                                  ],
+                                );
+                              },
+                            );
+                          }
+                        } else {
+                          showDialog(
+                            context: context,
+                            builder: (context) {
+                              return AlertDialog(
+                                title: Text("OOPS!!!"),
+                                content: Text(
+                                    "You Must Agree the Terms & Conditions..."),
+                                actions: [
+                                  TextButton(
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Text("OK"))
+                                ],
+                              );
+                            },
+                          );
+                        }
                       },
                       child: Text("  SUBMIT  ")),
                 ),

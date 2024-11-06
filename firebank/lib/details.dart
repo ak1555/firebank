@@ -11,6 +11,7 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.red.shade600,
         title: Container(
@@ -114,13 +115,54 @@ class _DetailsState extends State<Details> {
                                   // color: Colors.blue,
                                   child: Column(
                                     children: [
-                                      Text(
-                                        "AVAILABLE",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.red,
-                                            fontSize: 15,
-                                            letterSpacing: 1),
+                                      Row(mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          GestureDetector(
+                                            onTap: () {
+                                              
+                                            },
+                                            child: Container(
+                                              height: 50,
+                                              child: Text(
+                                                "EDIT",
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.red,
+                                                    fontSize: 15,
+                                                    letterSpacing: 1),
+                                              ),
+                                            ),
+                                          ),
+                                          SizedBox(width: 5,),
+                                          Container(
+                                            height: 50,
+                                            child: Text(
+                                              "/",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.red,
+                                                  fontSize: 15,
+                                                  letterSpacing: 1),
+                                            ),
+                                          ),
+                                          SizedBox(width: 5,),
+                                          GestureDetector(
+                                            onTap: () {
+                                              print("delete");
+                                            },
+                                            child: Container(
+                                              height: 50,
+                                              child: Text(
+                                                "DELETE",
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.red,
+                                                    fontSize: 15,
+                                                    letterSpacing: 1),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                       SizedBox(
                                         height: 15,

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,12 +49,15 @@ class _HomePageState extends State<HomePage> {
                         width: 25,
                         child: Stack(
                           children: [
-                            Positioned(left: 16,
+                            Positioned(
+                                left: 16,
                                 child: Container(
-                              height: 6.5,
-                              width: 6.5,
-                              decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(100)),
-                            )),
+                                  height: 6.5,
+                                  width: 6.5,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(100)),
+                                )),
                             Icon(
                               Icons.notifications,
                               color: Colors.grey,
@@ -160,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               "YOUR DONATED BLOOD CAN SAVE A LIFE",
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
+                                  fontWeight: FontWeight.bold, fontSize: 14),
                             ),
                             SizedBox(
                               height: 10,
@@ -172,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.red,
-                                      fontSize: 20,
+                                      fontSize: 18,
                                       letterSpacing: 1,
                                       wordSpacing: 1)),
                             ),
@@ -374,7 +378,7 @@ class _HomePageState extends State<HomePage> {
                                   "FIND DONOR",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      letterSpacing: 0),
+                                      letterSpacing: -0.5),
                                 )
                               ],
                             ),
@@ -500,14 +504,15 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Container(
                                   height: 50,
-                                  width: 250,
+                                  width: 230,
                                   child: Text(
                                     "INVITE YOUR FRIENDS OR FAMILY MEMBERS TO DONATE A BLOOD",
                                     style: TextStyle(
                                         color: Colors.grey[800],
+                                        fontWeight: FontWeight.bold,
                                         letterSpacing: 1,
-                                        wordSpacing: 1,
-                                        fontSize: 13),
+                                        wordSpacing: 0,
+                                        fontSize: 12),
                                   ))
                             ],
                           ),
@@ -524,19 +529,46 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: BottomAppBar(
         child: Row(
           children: [
-            SizedBox(width: 8,),
+            SizedBox(
+              width: 8,
+            ),
             IconButton(icon: Icon(Icons.menu), onPressed: () {}),
             Spacer(),
             IconButton(icon: Icon(Icons.search), onPressed: () {}),
-            IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
-            SizedBox(width: 8,),
+            IconButton(
+                onPressed: () {
+                  print("HII");
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text("SURE!"),
+                        content: Text("Are you want to logout"),
+                        actions: [
+                          MaterialButton(
+                            onPressed: () async{
+                          await FirebaseAuth.instance.signOut();
+                          Navigator.pop(context);
+                        },child: Text("LOGOUT"),)
+                        ],
+                      );
+                    },
+                  );
+                  Navigator.pushNamed(context, "/pro");
+                },
+                icon: Icon(
+                  Icons.logout_outlined,
+                  size: 29,
+                )),
+            SizedBox(
+              width: 8,
+            ),
           ],
         ),
       ),
       floatingActionButton:
           FloatingActionButton(child: Icon(Icons.add), onPressed: () {}),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Signup extends StatefulWidget {
@@ -8,6 +9,12 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  TextEditingController _email = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  TextEditingController _cpassword=TextEditingController();
+  void signin()async{
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email.text.trim(), password: _password.text.trim());
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,6 +87,7 @@ class _SignupState extends State<Signup> {
                     child: Expanded(
                         child: Expanded(
                             child: TextField(
+                              controller: _email,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                           hintText: "USER-NAME",
@@ -112,6 +120,7 @@ class _SignupState extends State<Signup> {
                     child: Expanded(
                         child: Expanded(
                             child: TextField(
+                              controller: _password,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                           prefixIcon: Icon(
@@ -144,6 +153,7 @@ class _SignupState extends State<Signup> {
                     child: Expanded(
                         child: Expanded(
                             child: TextField(
+                              controller: _cpassword,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
                           prefixIcon: Icon(
@@ -168,7 +178,13 @@ class _SignupState extends State<Signup> {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.red.shade500),
-                    onPressed: () {},
+                    onPressed: () {
+                      if(_password.text==_cpassword.text){
+                        signin();
+                      }else{
+                        print("doesnt match");
+                      }
+                    },
                     child: Text(
                       "SIGN-UP",
                       style: TextStyle(

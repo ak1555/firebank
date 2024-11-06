@@ -39,7 +39,7 @@ class _DetailsState extends State<Details> {
                   itemCount: 1,
                   itemBuilder: (context, index) {
                     return Container(
-                      height: 265,
+                      height: 235,
                       width: double.infinity,
                       margin: EdgeInsets.only(
                           left: 10, right: 10, top: 15, bottom: 10),
@@ -51,12 +51,12 @@ class _DetailsState extends State<Details> {
                       child: Column(
                         children: [
                           Container(
-                            height: 185,
+                            height: 155,
                             width: double.infinity,
                             child: Row(
                               children: [
                                 Container(
-                                  width: 185,
+                                  width: 178,
                                   // color: Colors.amber,
                                   child: Column(
                                     crossAxisAlignment:
@@ -68,11 +68,11 @@ class _DetailsState extends State<Details> {
                                         style: TextStyle(
                                             height: .65,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 21.5,
+                                            fontSize: 19,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 15,
+                                        height: 10,
                                       ),
                                       Text("Location"),
                                       Text(
@@ -80,11 +80,11 @@ class _DetailsState extends State<Details> {
                                         style: TextStyle(
                                             height: .65,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 19.5,
+                                            fontSize: 17,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 15,
+                                        height: 10,
                                       ),
                                       Text("Contact Number"),
                                       Text(
@@ -92,11 +92,11 @@ class _DetailsState extends State<Details> {
                                         style: TextStyle(
                                             height: .65,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 19.5,
+                                            fontSize: 17,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 15,
+                                        height: 10,
                                       ),
                                       Text("Blood Group"),
                                       Text(
@@ -104,14 +104,14 @@ class _DetailsState extends State<Details> {
                                         style: TextStyle(
                                             height: .65,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 19.5,
+                                            fontSize: 17,
                                             letterSpacing: 1),
                                       ),
                                     ],
                                   ),
                                 ),
                                 Container(
-                                  width: 170,
+                                  width: 130,
                                   // color: Colors.blue,
                                   child: Column(
                                     children: [
@@ -128,7 +128,7 @@ class _DetailsState extends State<Details> {
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.red,
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     letterSpacing: 1),
                                               ),
                                             ),
@@ -141,7 +141,7 @@ class _DetailsState extends State<Details> {
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   color: Colors.red,
-                                                  fontSize: 15,
+                                                  fontSize: 13,
                                                   letterSpacing: 1),
                                             ),
                                           ),
@@ -157,7 +157,7 @@ class _DetailsState extends State<Details> {
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold,
                                                     color: Colors.red,
-                                                    fontSize: 15,
+                                                    fontSize: 13,
                                                     letterSpacing: 1),
                                               ),
                                             ),
@@ -168,8 +168,8 @@ class _DetailsState extends State<Details> {
                                         height: 15,
                                       ),
                                       Container(
-                                        height: 100,
-                                        width: 100,
+                                        height: 90,
+                                        width: 90,
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(25),
@@ -194,7 +194,7 @@ class _DetailsState extends State<Details> {
                                   children: [
                                     Icon(
                                       Icons.phone,
-                                      size: 25,
+                                      size: 24,
                                       color: Colors.red,
                                     ),
                                     SizedBox(
@@ -204,7 +204,7 @@ class _DetailsState extends State<Details> {
                                       "CONTACT",
                                       style: TextStyle(
                                           color: Colors.red,
-                                          fontSize: 18,
+                                          fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                           letterSpacing: 1),
                                     )
@@ -217,7 +217,7 @@ class _DetailsState extends State<Details> {
                                   children: [
                                     Icon(
                                       Icons.share,
-                                      size: 25,
+                                      size: 24,
                                       color: Colors.red,
                                     ),
                                     SizedBox(
@@ -227,7 +227,7 @@ class _DetailsState extends State<Details> {
                                       "SHARE",
                                       style: TextStyle(
                                           color: Colors.red,
-                                          fontSize: 18,
+                                          fontSize: 15,
                                           fontWeight: FontWeight.bold,
                                           letterSpacing: 1),
                                     )

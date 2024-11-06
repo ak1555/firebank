@@ -60,6 +60,9 @@ class _AddfileState extends State<Addfile> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           // color: Colors.cyan,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("./images/g.jpg"), fit: BoxFit.cover)),
           child: ListView(
             children: [
               Container(

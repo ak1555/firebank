@@ -13,8 +13,11 @@ class _DetailsState extends State<Details> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.red.shade600,
+        backgroundColor: Colors.red.shade600,clipBehavior: Clip.none,
         title: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage("./images/app.jpg"))
+          ),
           child: Center(
               child: Text(
             "BLOOD BANK",
@@ -39,7 +42,7 @@ class _DetailsState extends State<Details> {
                   itemCount: 1,
                   itemBuilder: (context, index) {
                     return Container(
-                      height: 235,
+                      height: 225,
                       width: double.infinity,
                       margin: EdgeInsets.only(
                           left: 10, right: 10, top: 15, bottom: 10),
@@ -51,7 +54,7 @@ class _DetailsState extends State<Details> {
                       child: Column(
                         children: [
                           Container(
-                            height: 155,
+                            height: 145,
                             width: double.infinity,
                             child: Row(
                               children: [
@@ -62,49 +65,49 @@ class _DetailsState extends State<Details> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text("Donors Name"),
+                                      Text("Donors Name",style: TextStyle(fontSize: 12),),
                                       Text(
                                         "Abin krishna",
                                         style: TextStyle(
                                             height: .65,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 19,
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 18,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 10,
+                                        height: 11,
                                       ),
-                                      Text("Location"),
+                                      Text("Location",style: TextStyle(fontSize: 12)),
                                       Text(
                                         "Kochi, Kaloor",
                                         style: TextStyle(
                                             height: .65,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 17,
+                                            fontSize: 16,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 10,
+                                        height: 11,
                                       ),
-                                      Text("Contact Number"),
+                                      Text("Contact Number",style: TextStyle(fontSize: 12)),
                                       Text(
                                         "9947063352",
                                         style: TextStyle(
                                             height: .65,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 17,
+                                            fontSize: 16,
                                             letterSpacing: 1),
                                       ),
                                       SizedBox(
-                                        height: 10,
+                                        height: 11,
                                       ),
-                                      Text("Blood Group"),
+                                      Text("Blood Group",style: TextStyle(fontSize: 12)),
                                       Text(
                                         "O+",
                                         style: TextStyle(
                                             height: .65,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 17,
+                                            fontSize: 16,
                                             letterSpacing: 1),
                                       ),
                                     ],
@@ -119,7 +122,7 @@ class _DetailsState extends State<Details> {
                                         children: [
                                           GestureDetector(
                                             onTap: () {
-                                              
+                                              print("edit");
                                             },
                                             child: Container(
                                               height: 50,
@@ -165,11 +168,11 @@ class _DetailsState extends State<Details> {
                                         ],
                                       ),
                                       SizedBox(
-                                        height: 15,
+                                        height: 10,
                                       ),
                                       Container(
-                                        height: 90,
-                                        width: 90,
+                                        height: 85,
+                                        width: 85,
                                         child: ClipRRect(
                                           borderRadius:
                                               BorderRadius.circular(25),

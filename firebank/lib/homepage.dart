@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       Container(
                         height: 150,
-                        width: 320,
+                        width: 300,
                         child: Card(
                           child: Row(
                             children: [
@@ -86,13 +86,13 @@ class _HomePageState extends State<HomePage> {
                                 width: 3,
                               ),
                               Container(
-                                width: 100,
+                                width: 90,
                                 height: double.infinity,
                                 child: Image.asset("./images/bld.jpg"),
                               ),
                               Container(
                                 height: 160,
-                                width: 209,
+                                width: 199,
                                 child: Column(
                                   children: [
                                     Container(
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                                         "BLOOD     DONATION        DRIVE",
                                         style: TextStyle(
                                             letterSpacing: 1.5,
-                                            fontSize: 25,
+                                            fontSize: 24,
                                             fontWeight: FontWeight.w500),
                                       ),
                                     ),
@@ -113,8 +113,8 @@ class _HomePageState extends State<HomePage> {
                                     Row(
                                       children: [
                                         Container(
-                                          height: 27,
-                                          width: 85,
+                                          height: 29,
+                                          width: 87,
                                           alignment: Alignment.center,
                                           decoration: BoxDecoration(
                                               color: Colors.black,
@@ -155,7 +155,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Container(
                         height: 150,
-                        width: 320,
+                        width: 300,
                         child: Card(
                           child: Column(children: [
                             SizedBox(
@@ -164,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               "YOUR DONATED BLOOD CAN SAVE A LIFE",
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 14),
+                                  fontWeight: FontWeight.bold, fontSize: 13),
                             ),
                             SizedBox(
                               height: 10,
@@ -176,12 +176,12 @@ class _HomePageState extends State<HomePage> {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.red,
-                                      fontSize: 18,
+                                      fontSize: 17,
                                       letterSpacing: 1,
                                       wordSpacing: 1)),
                             ),
                             SizedBox(
-                              height: 5,
+                              height: 13,
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Container(
                         height: 150,
-                        width: 320,
+                        width: 300,
                         child: Card(
                           child: Row(
                             children: [
@@ -218,13 +218,13 @@ class _HomePageState extends State<HomePage> {
                                 width: 3,
                               ),
                               Container(
-                                width: 110,
+                                width: 105,
                                 height: double.infinity,
                                 child: Image.asset("./images/do.jpeg"),
                               ),
                               Container(
                                 height: 160,
-                                width: 199,
+                                width: 184,
                                 child: Column(
                                   children: [
                                     Container(
@@ -232,10 +232,10 @@ class _HomePageState extends State<HomePage> {
                                       width: double.infinity,
                                       alignment: Alignment.topCenter,
                                       child: Text(
-                                        "DONATE     BLOOD,        SAVE A LIFE",
+                                        "DONATE     BLOOD,       SAVE A LIFE",
                                         style: TextStyle(
                                             letterSpacing: 1.5,
-                                            fontSize: 25,
+                                            fontSize: 24,
                                             fontWeight: FontWeight.w500),
                                       ),
                                     ),
@@ -290,7 +290,8 @@ class _HomePageState extends State<HomePage> {
           ),
           // ====================================================================
           Container(
-            height: 558,
+            // height: 558,
+            height: 658,
             width: double.infinity,
             child: Card(
               child: Column(
@@ -315,12 +316,13 @@ class _HomePageState extends State<HomePage> {
                               Icon(
                                 Icons.campaign,
                                 color: Colors.red,
-                                size: 44,
+                                size: 40,
                               ),
                               Text(
                                 "CAMPAINS",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
+                                    fontSize: 12,
                                     letterSpacing: 1),
                               )
                             ],
@@ -343,11 +345,12 @@ class _HomePageState extends State<HomePage> {
                                 Icon(
                                   Icons.bloodtype,
                                   color: Colors.red,
-                                  size: 44,
+                                  size: 40,
                                 ),
                                 Text(
                                   "DONATE",
                                   style: TextStyle(
+                                     fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       letterSpacing: 1),
                                 )
@@ -372,11 +375,12 @@ class _HomePageState extends State<HomePage> {
                                 Icon(
                                   Icons.switch_account_outlined,
                                   color: Colors.red,
-                                  size: 44,
+                                  size: 40,
                                 ),
                                 Text(
                                   "FIND DONOR",
                                   style: TextStyle(
+                                     fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                       letterSpacing: -0.5),
                                 )
@@ -390,6 +394,154 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 20,
                   ),
+                  Row(
+                    children: [
+                      SizedBox(width: 15,),
+                      Text("BLOOD REQUESTS",style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 1,),),
+                    ],
+                  ),
+                  SizedBox(height: 5),
+                    Container(
+                      height: 125,
+                    width: double.infinity,
+                    padding: EdgeInsets.only(left: 15,right: 15),
+                    child: ListView(scrollDirection: Axis.horizontal,
+                      children: [
+                        Container(
+                          height:140 ,
+                          width: 300,
+                          padding: EdgeInsets.all(8),
+                          margin: EdgeInsets.only(left: 5,right: 5),
+                          decoration: BoxDecoration(
+                            color: Colors.red,borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Column(
+                            children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 190,
+                                  height: 109,
+                                
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 8,),
+                                      Row(
+                                        children: [
+                                           SizedBox(width: 2.5,),
+                                          Icon(Icons.person,  color: Colors.white,),
+                                           SizedBox(width: 5,),
+                                          Text("DRUV CHUHAN",style: TextStyle( fontSize: 16,letterSpacing: 1,fontWeight: FontWeight.bold, color: Colors.white,),)
+                                        ],
+                                      ),
+                                       SizedBox(height: 10,),
+                                      Row(
+                                        children: [
+                                          SizedBox(width: 3,),
+                                          Icon(Icons.location_on,  color: Colors.white,),
+                                           SizedBox(width: 5),
+                                          Container(
+                                            height: 58,width: 158,
+                                             child: Text("RAJASTAN MULTINATIONAL HOSPITAL",
+                                             style: TextStyle(  color: Colors.white,letterSpacing: 1,fontWeight: FontWeight.bold, ),))
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 92,
+                                  height: 109,
+                                  child: Column(
+                                    children: [
+                                      Text("1 UNITS",style: TextStyle(color: Colors.white,fontSize: 12),),
+                                      Container(
+                                        height: 80,
+                                        width: 80,
+                                        decoration: BoxDecoration(
+                                          // image: DecorationImage(
+                                          //   image: AssetImage("./images/uu.jpg"),)
+                                        ),alignment: Alignment.bottomCenter,
+                                        child: Text("O+",style: TextStyle( fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            )
+                            ],
+                          ),
+                        ),
+
+                         Container(
+                          height:140 ,
+                          width: 300,
+                           margin: EdgeInsets.only(left: 5,right: 5),
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: Colors.red,borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: Column(
+                            children: [
+                            Row(
+                              children: [
+                                Container(
+                                  width: 190,
+                                  height: 109,
+                                
+                                  child: Column(
+                                    children: [
+                                      SizedBox(height: 8,),
+                                      Row(
+                                        children: [
+                                           SizedBox(width: 2.5,),
+                                          Icon(Icons.person,  color: Colors.white,),
+                                           SizedBox(width: 5,),
+                                          Text("CHUVAN DRUV",style: TextStyle( fontSize: 16,letterSpacing: 1,fontWeight: FontWeight.bold, color: Colors.white,),)
+                                        ],
+                                      ),
+                                       SizedBox(height: 10,),
+                                      Row(
+                                        children: [
+                                          SizedBox(width: 3,),
+                                          Icon(Icons.location_on,  color: Colors.white,),
+                                           SizedBox(width: 5),
+                                          Container(
+                                            height: 58,width: 158,
+                                             child: Text("MANIPUR INTERNATIONAL HOSPITAL",
+                                             style: TextStyle(  color: Colors.white,letterSpacing: 1,fontWeight: FontWeight.bold, ),))
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  width: 92,
+                                  height: 109,
+                                  child: Column(
+                                    children: [
+                                      Text("2 UNITS",style: TextStyle(color: Colors.white,fontSize: 12),),
+                                      Container(
+                                        height: 80,
+                                        width: 80,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage("./images/uu.jpg"),)
+                                        ),alignment: Alignment.bottomCenter,
+                                        child: Text("O+",style: TextStyle( fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                    ),
+                  SizedBox(height: 20,),
                   Container(
                     height: 230,
                     width: double.infinity,

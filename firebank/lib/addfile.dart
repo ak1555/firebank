@@ -62,7 +62,7 @@ class _AddfileState extends State<Addfile> {
           // color: Colors.cyan,
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("./images/g.jpg"), fit: BoxFit.cover)),
+                  image: AssetImage("./images/bck2.jpeg"), fit: BoxFit.contain)),
           child: ListView(
             children: [
               Container(

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -15,6 +16,19 @@ class _LoginState extends State<Login> {
   Future loginfun()async{
     await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email.text, password: _password.text);
   }
+
+    Future loginwithgoogle() async {
+      final firebaseauth = await FirebaseAuth.instance;
+      final googleservice = await GoogleSignIn();
+      final googleuser = await googleservice.signIn();
+      print(googleuser);
+      final GoogleSignInAuthentication? googleauth =
+          await googleuser?.authentication;
+      final cred = GoogleAuthProvider.credential(
+          accessToken: googleauth?.accessToken, idToken: googleauth?.idToken);
+      final user = await firebaseauth.signInWithCredential(cred);
+      print(user);
+    }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +39,14 @@ class _LoginState extends State<Login> {
           child: ListView(
             children: [
               Container(
-                height: 500,
+                height: 450,
                 width: double.infinity,
                 child: Column(
                   children: [
                     Container(
-                      height: 250,
-                      width: 250,
-                      padding: EdgeInsets.all(50),
+                      height: 200,
+                      width: 200,
+                      padding: EdgeInsets.only(left: 40,right: 40,top: 40),
                       child: Image.asset("./images/hand.jpeg"),
                     ),
                     Row(
@@ -63,6 +77,7 @@ class _LoginState extends State<Login> {
               Container(
                 height: 390,
                 width: double.infinity,
+                
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -161,28 +176,62 @@ class _LoginState extends State<Login> {
                       height: 1,
                     ),
                     Container(
-                      height: 60,
+                      height: 50,
                       width: double.infinity,
                       alignment: Alignment.center,
-                      child: Container(
-                        height: 60,
-                        width: 200,
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-          
-                                // backgroundColor: Colors.red.shade500
-                                ),
-                            onPressed: () {
-                              Navigator.pushNamed(context, "/signup");
-                            },
-                            child: Text(
-                              "SIGNUP",
-                              style: TextStyle(
-                                fontSize: 17,
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
+                      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          GestureDetector(
+                            onTap: loginwithgoogle,
+                            child: Container(
+                              height: 50,
+                              width: 130,
+                            
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                  // color: Colors.green,
                               ),
-                            )),
+                              child: Card(
+                                child: Row(
+                                  children: [
+                                  Container(
+                                    height: 35,
+                                    width: 35,
+                                    margin: EdgeInsets.only(left: 3),
+
+                                    child: Image.asset("./images/g.jpg"),
+                                  ),
+                                  Text("   SIGNUP",style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue
+                                  ),)
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 50,
+                            width: 130,
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    
+                                    // backgroundColor: Colors.red.shade500
+                                    ),
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "/signup");
+                                },
+                                child: Text(
+                                  "SIGNUP",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                )),
+                          ),
+                        ],
                       ),
                     ),
                   ],

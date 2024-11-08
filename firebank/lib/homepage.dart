@@ -96,14 +96,14 @@ class _HomePageState extends State<HomePage> {
                                 child: Column(
                                   children: [
                                     Container(
-                                      height: 100,
+                                      height: 97,
                                       width: double.infinity,
                                       alignment: Alignment.topCenter,
                                       child: Text(
                                         "BLOOD     DONATION        DRIVE",
                                         style: TextStyle(
                                             letterSpacing: 1.5,
-                                            fontSize: 24,
+                                            fontSize: 23,
                                             fontWeight: FontWeight.w500),
                                       ),
                                     ),
@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
                                         "DONATE     BLOOD,       SAVE A LIFE",
                                         style: TextStyle(
                                             letterSpacing: 1.5,
-                                            fontSize: 24,
+                                            fontSize: 23,
                                             fontWeight: FontWeight.w500),
                                       ),
                                     ),
@@ -291,7 +291,7 @@ class _HomePageState extends State<HomePage> {
           // ====================================================================
           Container(
             // height: 558,
-            height: 658,
+            height: 666,
             width: double.infinity,
             child: Card(
               child: Column(
@@ -367,7 +367,8 @@ class _HomePageState extends State<HomePage> {
                             width: 95,
                             padding: EdgeInsets.only(top: 1, bottom: 2),
                             decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors.white60,
+                                // border: Border.all(width: .5),
                                 borderRadius: BorderRadius.circular(27)),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -396,8 +397,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Row(
                     children: [
-                      SizedBox(width: 15,),
-                      Text("BLOOD REQUESTS",style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 1,),),
+                      SizedBox(width: 25,),
+                      Text("BLOOD REQUESTS",style: TextStyle(fontWeight: FontWeight.bold,letterSpacing: 1,fontSize: 12),),
                     ],
                   ),
                   SizedBox(height: 5),
@@ -518,16 +519,17 @@ class _HomePageState extends State<HomePage> {
                                 Container(
                                   width: 92,
                                   height: 109,
-                                  child: Column(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text("2 UNITS",style: TextStyle(color: Colors.white,fontSize: 12),),
                                       Container(
-                                        height: 80,
-                                        width: 80,
+                                        height: 55,
+                                        width: 55,
+                                        
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
-                                            image: AssetImage("./images/uu.jpg"),)
-                                        ),alignment: Alignment.bottomCenter,
+                                            image: AssetImage("./images/pngegg.png"),)
+                                        ),alignment: Alignment.center,
                                         child: Text("O+",style: TextStyle( fontSize: 18,color: Colors.white,fontWeight: FontWeight.bold),),
                                       )
                                     ],
@@ -624,7 +626,7 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     margin: EdgeInsets.only(left: 15, right: 15),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Colors.white60,
                         borderRadius: BorderRadius.circular(25)),
                     child: Row(
                       children: [
